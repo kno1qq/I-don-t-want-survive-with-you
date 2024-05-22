@@ -68,6 +68,7 @@ public class DialogSystem : MonoBehaviour
             textList.Add(line);
         }
     }
+    //顯示對話UI
     IEnumerator SetTextUI()
     {
         player.GetComponent<Player>().isEnabledWalk = false;
