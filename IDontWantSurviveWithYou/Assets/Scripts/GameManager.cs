@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     public int dialogPart = 0;
     public GameObject tipPanel;
     public Text tipText;
+    public GameObject screenPanel;
+    public Text screenPanelText;
+
     private void Awake()
     {
         if (instance != this)
@@ -35,5 +38,15 @@ public class GameManager : MonoBehaviour
     public void CloseTipPanel()
     {
         tipPanel.SetActive(false);
+    }
+    //第一幕第二幕第三幕
+    public void openScreenPanel(string text)
+    {
+        screenPanelText.text = text;
+        screenPanel.SetActive(true);
+    }
+    public void closePanel()
+    {
+        screenPanel.SetActive(false);
     }
 }

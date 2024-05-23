@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     public bool isEnabledWalk = true;
 
     public CinemachineVirtualCamera vCam;
-    //
+    
     public GameObject dialogPanel;
     void Start()
     {
@@ -48,8 +48,13 @@ public class Player : MonoBehaviour
 
         if (GameManager.instance.dialogPart == 3)
         {
-            vCam.m_Lens.OrthographicSize = 3;
+            //vCam.m_Lens.OrthographicSize = 3;
             dialogPanel.SetActive(true);
+        }
+        if (GameManager.instance.dialogPart == 4)
+        {
+            GameManager.instance.dialogPart = 5;
+            GameManager.instance.openScreenPanel("第一幕:劫後餘生");
         }
     }
     private void FixedUpdate()
