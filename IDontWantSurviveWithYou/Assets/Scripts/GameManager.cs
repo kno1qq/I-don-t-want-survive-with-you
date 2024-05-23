@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public Text tipText;
     public GameObject screenPanel;
     public Text screenPanelText;
+    public GameObject grid;
 
     private void Awake()
     {
@@ -48,5 +49,13 @@ public class GameManager : MonoBehaviour
     public void closePanel()
     {
         screenPanel.SetActive(false);
+    }
+    public void openGrid()
+    {
+        grid.SetActive(true);
+    }
+    public void closeGrid()
+    {
+        grid.SetActive(false);
     }
 }

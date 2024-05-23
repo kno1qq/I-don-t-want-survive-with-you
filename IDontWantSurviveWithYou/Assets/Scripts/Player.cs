@@ -55,6 +55,7 @@ public class Player : MonoBehaviour
         {
             GameManager.instance.dialogPart = 5;
             GameManager.instance.openScreenPanel("第一幕:劫後餘生");
+            GameManager.instance.openGrid();
         }
     }
     private void FixedUpdate()
