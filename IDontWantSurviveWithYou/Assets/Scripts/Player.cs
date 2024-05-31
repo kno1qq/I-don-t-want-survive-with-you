@@ -13,8 +13,8 @@ public class Player : MonoBehaviour
     Vector2 moveDirection;
     public Animator playAni;
 
-    public bool isShowedTip = false;
-    public bool isShowedDialog = false;
+    //public bool isShowedTip = false;
+    //public bool isShowedDialog = false;
     public bool isEnabledWalk = true;
 
     public CinemachineVirtualCamera vCam;
@@ -40,10 +40,11 @@ public class Player : MonoBehaviour
             playAni.SetFloat("Speed", moveDirection.sqrMagnitude);
         }
         //顯示TIP
-        if (GameManager.instance.dialogPart == 1 && !isShowedTip)
+        /*
+        if (GameManager.instance.dialogPart == 1 && !PanelManager.instance.isShowedTip)
         {
             StartCoroutine(showTip("使用鍵盤WASD移動"));
-            isShowedTip = true;
+            PanelManager.instance.isShowedTip = true;
         }
 
         if (GameManager.instance.dialogPart == 3)
@@ -57,6 +58,7 @@ public class Player : MonoBehaviour
             GameManager.instance.openScreenPanel("第一幕:劫後餘生");
             GameManager.instance.openGrid();
         }
+        */
     }
     private void FixedUpdate()
     {
@@ -71,10 +73,9 @@ public class Player : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "chat" && !isShowedDialog) 
+        if (collision.tag == "chat" && GameManager.instance.dialogPart == 1) 
         {
             dialogPanel.SetActive(true);
-            isShowedDialog = true;
         }
     }
     IEnumerator showTip(string tipText)
