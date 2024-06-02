@@ -13,7 +13,7 @@ public class PanelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        dialogPanel.SetActive(true);
     }
 
     // Update is called once per frame

@@ -20,45 +20,19 @@ public class Player : MonoBehaviour
     public CinemachineVirtualCamera vCam;
     
     public GameObject dialogPanel;
+    public GameObject weaponHolder;
+    Vector3 target, direction; //滑鼠的目標 方向
+    Quaternion targetRotation;
     void Start()
     {
         _transform = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
-        dialogPanel.SetActive(true);
     }
    
     void Update()
     {
-        //獲取玩家輸入
-        if (isEnabledWalk)
-        {
-            moveX = Input.GetAxis("Horizontal");
-            moveY = Input.GetAxis("Vertical");
-
-            playAni.SetFloat("Horizontal", moveX);
-            playAni.SetFloat("Vertical", moveY);
-            playAni.SetFloat("Speed", moveDirection.sqrMagnitude);
-        }
-        //顯示TIP
-        /*
-        if (GameManager.instance.dialogPart == 1 && !PanelManager.instance.isShowedTip)
-        {
-            StartCoroutine(showTip("使用鍵盤WASD移動"));
-            PanelManager.instance.isShowedTip = true;
-        }
-
-        if (GameManager.instance.dialogPart == 3)
-        {
-            //vCam.m_Lens.OrthographicSize = 3;
-            dialogPanel.SetActive(true);
-        }
-        if (GameManager.instance.dialogPart == 4)
-        {
-            GameManager.instance.dialogPart = 5;
-            GameManager.instance.openScreenPanel("第一幕:劫後餘生");
-            GameManager.instance.openGrid();
-        }
-        */
+        Walk();
+        attack();
     }
     private void FixedUpdate()
     {
@@ -78,10 +52,26 @@ public class Player : MonoBehaviour
             dialogPanel.SetActive(true);
         }
     }
-    IEnumerator showTip(string tipText)
+    void Walk()
     {
-        GameManager.instance.OpenTipPanel(tipText);
-        yield return new WaitForSeconds(3);
-        GameManager.instance.CloseTipPanel();
+        if (isEnabledWalk)
+        {
+            moveX = Input.GetAxisRaw("Horizontal");
+            moveY = Input.GetAxisRaw("Vertical");
+
+            playAni.SetFloat("Horizontal", moveX);
+            playAni.SetFloat("Vertical", moveY);
+            playAni.SetFloat("Speed", moveDirection.sqrMagnitude);
+        }
+    }
+    void attack()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            target = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+            direction = target - weaponHolder.transform.position;
+            targetRotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90);
+            weaponHolder.transform.rotation = targetRotation;
+        }
     }
 }
