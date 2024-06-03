@@ -11,6 +11,7 @@ TagManager:
   - 
   - Water
   - UI
+  - Enemy
   - 
   - 
   - 
@@ -34,8 +35,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - text
   - 
   m_SortingLayers:
   - name: Default

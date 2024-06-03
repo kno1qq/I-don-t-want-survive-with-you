@@ -8,4 +8,5 @@ public class slot : MonoBehaviour
     public Item slotItem;
     public Image slotImage;
     public Text slotNum;
+
 }

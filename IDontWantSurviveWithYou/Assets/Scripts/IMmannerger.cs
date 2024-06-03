@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class IMmannerger : MonoBehaviour
 {
-    static IMmannerger instance;
-    public Inventory mybag;
-    public GameObject slotGrid;
-    public slot slotPrefab;
-    public Text itemInfromation;
-    void Awake()
+   static IMmannerger instance;
+   public Inventory mybag;
+   public GameObject slotGrid;
+   public slot slotPrefab;
+   public Text itemInfromation;
+
+     void Awake()
     {
         if (instance != null)
             Destroy(this);

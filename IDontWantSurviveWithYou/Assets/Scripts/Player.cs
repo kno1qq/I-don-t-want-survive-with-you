@@ -20,7 +20,9 @@ public class Player : MonoBehaviour
     public CinemachineVirtualCamera vCam;
     
     public GameObject dialogPanel;
+
     public GameObject weaponHolder;
+    public Animator weaponHolderAni;
     Vector3 target, direction; //滑鼠的目標 方向
     Quaternion targetRotation;
     void Start()
@@ -66,12 +68,14 @@ public class Player : MonoBehaviour
     }
     void attack()
     {
+        //攻擊的動畫
         if (Input.GetButtonDown("Fire1"))
         {
             target = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
-            direction = target - weaponHolder.transform.position;
+            direction = target - transform.position;
             targetRotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90);
             weaponHolder.transform.rotation = targetRotation;
+            weaponHolderAni.SetTrigger("attack");
         }
     }
 }

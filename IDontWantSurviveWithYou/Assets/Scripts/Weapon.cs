@@ -4,29 +4,27 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    Animator Ani;
-    Vector3 target, direction; //滑鼠的目標 方向
-    Quaternion targetRotation;
-    // Start is called before the first frame update
+    public LayerMask whatToHit;
     void Start()
     {
-        Ani = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        attack();
+        
     }
-    void attack()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (Input.GetButtonDown("Fire1"))
+        print("10");
+        IDamageable damageable = collision.transform.GetComponent<IDamageable>();
+        
+        if(damageable != null)
         {
-            target = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
-            direction = target - transform.position;
-            targetRotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90);
-            transform.rotation = targetRotation;
-            Ani.SetTrigger("attack");
+            damageable.TakeDamage(10);
+            PopupText.Create(collision.transform.position, Random.Range(1, 100), Random.Range(0, 100) < 30);
         }
+        
     }
 }
