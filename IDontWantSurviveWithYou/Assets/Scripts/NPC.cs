@@ -6,7 +6,10 @@ public class NPC : MonoBehaviour
 {
     public GameObject TalkUI;
     public GameObject Button;
-    public Animator _ani;
+    public Animator boss_ani;
+    public Animator m3_ani;
+    public Animator woman_ani;
+    public Animator neighbor_ani;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +21,11 @@ public class NPC : MonoBehaviour
     {
         if(Button.activeSelf && Input.GetKeyDown(KeyCode.R))
         {
-            _ani.SetBool("isTurn", true);
+            boss_ani.SetBool("isTurn", true);
+            m3_ani.SetBool("isTurn", true);
+            woman_ani.SetBool("isTurn", true);
+            neighbor_ani.SetBool("isTurn", true);
+
             TalkUI.SetActive(true);
         }
     }
