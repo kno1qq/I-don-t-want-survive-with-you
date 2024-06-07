@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Food
   itemImage: {fileID: -5429680668234489027, guid: c9fcf4256497b094cb76769b702cadb1, type: 3}
-  itemHeld: 0
+  itemHeld: 63
   itemInfo: 

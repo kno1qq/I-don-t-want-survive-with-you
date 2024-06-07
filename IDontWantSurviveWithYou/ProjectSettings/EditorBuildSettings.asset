@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ForestScene.unity
     guid: 7b644f1a584cd474a82d2a9565e71179
+  - enabled: 1
+    path: Assets/Scenes/Shelter.unity
+    guid: e8e6b5167bc03624ead971f09a13338f
   m_configObjects: {}

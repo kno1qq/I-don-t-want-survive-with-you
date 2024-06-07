@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -58,6 +59,11 @@ public class Player : MonoBehaviour
             GameManager.instance.openDialog(1);
             GameManager.instance.GameState = 2;
         }
+        if (collision.tag == "GoInShelter")
+        {
+            SceneManager.LoadScene("Shelter");
+        }
+    
     }
     void Walk()
     {
