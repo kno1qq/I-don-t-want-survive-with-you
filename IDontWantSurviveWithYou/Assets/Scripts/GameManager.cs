@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -13,23 +13,24 @@ public class GameManager : MonoBehaviour
     public GameObject screenPanel;
     public Text screenPanelText;
     public GameObject grid;
+    public GameObject dialogPanel;
 
+    public GameObject player;
+
+    public bool isTalk = false;
+    public int GameState;
     private void Awake()
     {
-        if (instance != this)
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+            
+        }
+        else
         {
             Destroy(gameObject);
         }
-        instance = this;
-        DontDestroyOnLoad(gameObject);
-    }
-    void Start()
-    {
-        
-    }
-    void Update()
-    {
-        
     }
     public void OpenTipPanel(string text)
     {
@@ -46,7 +47,7 @@ public class GameManager : MonoBehaviour
         screenPanelText.text = text;
         screenPanel.SetActive(true);
     }
-    public void closePanel()
+    public void closeScreenPanel()
     {
         screenPanel.SetActive(false);
     }
@@ -57,5 +58,17 @@ public class GameManager : MonoBehaviour
     public void closeGrid()
     {
         grid.SetActive(false);
+    }
+    public void openDialog(int part)
+    {
+        isTalk = true;
+        dialogPart = part;
+        dialogPanel.SetActive(true);
+    }
+    public IEnumerator showTip(string tipText)
+    {
+        instance.OpenTipPanel(tipText);
+        yield return new WaitForSeconds(3);
+        instance.CloseTipPanel();
     }
 }

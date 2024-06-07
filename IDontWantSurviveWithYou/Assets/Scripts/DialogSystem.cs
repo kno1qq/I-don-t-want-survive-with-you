@@ -25,7 +25,8 @@ public class DialogSystem : MonoBehaviour
     public Sprite face05;
 
     List<string> textList = new List<string>();
-    bool textFinished;
+    bool textFinished; //是否完成打字
+    bool cancelTyping; //取消打字
 
     public GameObject player;
 
@@ -42,18 +43,25 @@ public class DialogSystem : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.R) && index == textList.Count)
+        if(Input.GetKeyDown(KeyCode.R) && index == textList.Count) //對話結束
         {
             gameObject.SetActive(false);
-            player.GetComponent<Player>().isEnabledWalk = true;
-            GameManager.instance.dialogPart += 1;
-            Debug.Log($"dialogPart = {GameManager.instance.dialogPart}");
+            GameManager.instance.isTalk = false;
+            //GameManager.instance.dialogPart += 1;
+            //Debug.Log($"dialogPart = {GameManager.instance.dialogPart}");
             index = 0;
             return;
         }
-        if(Input.GetKeyDown(KeyCode.R) && textFinished)
+        if(Input.GetKeyDown(KeyCode.R))
         {
-            StartCoroutine(SetTextUI());
+            if(textFinished && !cancelTyping)
+            {
+                StartCoroutine(SetTextUI());
+            }
+            else if (!textFinished) //沒有正在打字
+            {
+                cancelTyping = !cancelTyping;
+            }
         }
     }
     //讀取文本檔案
@@ -71,7 +79,6 @@ public class DialogSystem : MonoBehaviour
     //顯示對話UI
     IEnumerator SetTextUI()
     {
-        player.GetComponent<Player>().isEnabledWalk = false;
         textFinished = false;
         textLabel.text = "";
 
@@ -98,13 +105,23 @@ public class DialogSystem : MonoBehaviour
                 index++;
                 break;
         }
-
+        /*
         for (int i = 0; i < textList[index].Length; i++)
         {
             textLabel.text += textList[index][i];
 
             yield return new WaitForSeconds(textSpeed);
         }
+        */
+        int letter = 0;
+        while (!cancelTyping && letter < textList[index].Length - 1)
+        {
+            textLabel.text += textList[index][letter];
+            letter++;
+            yield return new WaitForSeconds(textSpeed);
+        }
+        textLabel.text = textList[index];
+        cancelTyping = false;
         textFinished = true;
         index++;
     }

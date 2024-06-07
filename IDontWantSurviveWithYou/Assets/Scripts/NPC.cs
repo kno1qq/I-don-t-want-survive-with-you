@@ -19,14 +19,15 @@ public class NPC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Button.activeSelf && Input.GetKeyDown(KeyCode.R))
+        if(Button.activeSelf && Input.GetKeyDown(KeyCode.R) && GameManager.instance.GameState == 2)
         {
             boss_ani.SetBool("isTurn", true);
             m3_ani.SetBool("isTurn", true);
             woman_ani.SetBool("isTurn", true);
             neighbor_ani.SetBool("isTurn", true);
 
-            TalkUI.SetActive(true);
+            GameManager.instance.openDialog(2);
+            GameManager.instance.GameState = 3;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

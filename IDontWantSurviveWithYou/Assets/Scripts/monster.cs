@@ -15,9 +15,7 @@ public class monster : LivingEntity
 
     void Update()
     {
-        dir = (playerTransform.position - transform.position).normalized;
-        angel = Vector2.SignedAngle(dir,transform.right);
-        animator.SetFloat("angel", angel);
+        monsterMove();
     }
     public override void TakeDamage(float damage)
     {
@@ -29,5 +27,12 @@ public class monster : LivingEntity
             };
         }
         base.TakeDamage(damage);
+    }
+
+    public void monsterMove()
+    {
+        dir = (playerTransform.position - transform.position).normalized;
+        angel = Vector2.SignedAngle(dir, transform.right);
+        animator.SetFloat("angel", angel);
     }
 }

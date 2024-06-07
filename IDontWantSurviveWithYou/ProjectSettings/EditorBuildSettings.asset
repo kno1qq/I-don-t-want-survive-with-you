@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/LOBBY.unity
+    guid: eb84ad65a7e401c4b9ab98464e6badd5
+  - enabled: 1
     path: Assets/Scenes/Beach.unity
     guid: b81d1cf26bc85ee49b01334cdf9979b6
+  - enabled: 1
+    path: Assets/Scenes/ForestScene.unity
+    guid: 7b644f1a584cd474a82d2a9565e71179
   m_configObjects: {}

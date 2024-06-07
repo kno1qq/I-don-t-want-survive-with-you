@@ -25,6 +25,10 @@ public class Player : MonoBehaviour
     public Animator weaponHolderAni;
     Vector3 target, direction; //滑鼠的目標 方向
     Quaternion targetRotation;
+    private void Awake()
+    {
+        //DontDestroyOnLoad(gameObject);
+    }
     void Start()
     {
         _transform = GetComponent<Transform>();
@@ -39,7 +43,7 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         //計算移動方向
-        if (isEnabledWalk)
+        if (isEnabledWalk && !GameManager.instance.isTalk)
         {
             moveDirection = new Vector2(moveX, moveY).normalized;
             rb.velocity = moveDirection * speed;
@@ -49,14 +53,15 @@ public class Player : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "chat" && GameManager.instance.dialogPart == 1) 
+        if (collision.tag == "chat" && GameManager.instance.GameState == 1) 
         {
-            dialogPanel.SetActive(true);
+            GameManager.instance.openDialog(1);
+            GameManager.instance.GameState = 2;
         }
     }
     void Walk()
     {
-        if (isEnabledWalk)
+        if (isEnabledWalk && !GameManager.instance.isTalk)
         {
             moveX = Input.GetAxisRaw("Horizontal");
             moveY = Input.GetAxisRaw("Vertical");
