@@ -8225,7 +8225,7 @@ PrefabInstance:
     - target: {fileID: 3668143770951590213, guid: df32a655f742ef143a71366176f66d84, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 66759119}
+      objectReference: {fileID: 2058443036}
     - target: {fileID: 3668143770951590213, guid: df32a655f742ef143a71366176f66d84, type: 3}
       propertyPath: textFile.Array.size
       value: 3
@@ -17085,6 +17085,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 66759127}
   m_SourcePrefab: {fileID: 100100000, guid: bb1f64a5aeb35724f8ed9ae5f08baeba, type: 3}
+--- !u!114 &2058443036 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2007588145723762119, guid: bb1f64a5aeb35724f8ed9ae5f08baeba, type: 3}
+  m_PrefabInstance: {fileID: 2058443035}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66759119}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b49a461ff67729e4e8ee66411b3b6b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2093823712
 GameObject:
   m_ObjectHideFlags: 0

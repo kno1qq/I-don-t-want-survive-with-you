@@ -15,6 +15,11 @@ public class ForestPanelManager3 : MonoBehaviour
     }
     private void Update()
     {
+        if (GameManager.instance.GameState == 1 && !GameManager.instance.isTalk)
+        {
+            TimerPanel.SetActive(true);
+            GameManager.instance.GameState = 2;
+        }
         if (GameManager.instance.GameState == 15)
         {
             GameManager.instance.openDialog(1);

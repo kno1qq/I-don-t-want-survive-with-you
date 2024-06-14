@@ -29,7 +29,7 @@ public class DialogSystem : MonoBehaviour
     bool textFinished; //是否完成打字
     bool cancelTyping; //取消打字
 
-    public GameObject player;
+    public Player player;
 
     void Awake()
     {
@@ -48,6 +48,7 @@ public class DialogSystem : MonoBehaviour
         {
             gameObject.SetActive(false);
             GameManager.instance.isTalk = false;
+            //player.isEnabledWalk = true;
             //GameManager.instance.dialogPart += 1;
             //Debug.Log($"dialogPart = {GameManager.instance.dialogPart}");
             index = 0;
@@ -80,6 +81,7 @@ public class DialogSystem : MonoBehaviour
     //顯示對話UI
     IEnumerator SetTextUI()
     {
+        //player.isEnabledWalk = false;
         textFinished = false;
         textLabel.text = "";
 

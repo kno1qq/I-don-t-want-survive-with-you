@@ -672,6 +672,17 @@ MonoBehaviour:
   weaponHolder: {fileID: 999079460}
   weaponHolderAni: {fileID: 999079462}
   uiPanel: {fileID: 1710376188}
+--- !u!114 &66759131 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2007588145723762119, guid: bb1f64a5aeb35724f8ed9ae5f08baeba, type: 3}
+  m_PrefabInstance: {fileID: 2058443035}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66759119}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b49a461ff67729e4e8ee66411b3b6b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &90200624
 GameObject:
   m_ObjectHideFlags: 0
@@ -1291,6 +1302,32 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2206879768821263825, guid: df32a655f742ef143a71366176f66d84, type: 3}
   m_PrefabInstance: {fileID: 1235301349}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &317382745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317382737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0844a8130f6957c4889a49ec5b58d93e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textLabel: {fileID: 0}
+  faceImage: {fileID: 0}
+  textFile:
+  - {fileID: 4900000, guid: eaf4431e7cb513d4ab9b320377819a81, type: 3}
+  fileIndex: 0
+  index: 0
+  textSpeed: 0
+  face01: {fileID: 21300000, guid: c7d2cbcb3aaef9c43a9afded3ba3fc6d, type: 3}
+  face02: {fileID: 21300000, guid: f84bdc263975bdd4b99733251296fa41, type: 3}
+  face03: {fileID: 21300000, guid: fef2d91753f3a7748a9a7eb7099bb2cf, type: 3}
+  face04: {fileID: 21300000, guid: 5f73a7b0e3813af4392ac643bf9ca2ed, type: 3}
+  face05: {fileID: 21300000, guid: 0f377d99c1a2a9640a81f2d8d2e52cb8, type: 3}
+  face06: {fileID: 0}
+  player: {fileID: 66759131}
 --- !u!1 &376224387
 GameObject:
   m_ObjectHideFlags: 0
@@ -5638,7 +5675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e73809ef4160994abc8a91ba3d5dc4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: ForestScene 2
+  sceneToLoad: ForestScene 3
 --- !u!61 &867380140
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8002,7 +8039,7 @@ PrefabInstance:
     - target: {fileID: 3668143770951590213, guid: df32a655f742ef143a71366176f66d84, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 66759119}
+      objectReference: {fileID: 66759131}
     - target: {fileID: 3668143770951590213, guid: df32a655f742ef143a71366176f66d84, type: 3}
       propertyPath: textFile.Array.size
       value: 1
@@ -8063,10 +8100,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3668143770951590213, guid: df32a655f742ef143a71366176f66d84, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7408911968736755880, guid: df32a655f742ef143a71366176f66d84, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 317382745}
   m_SourcePrefab: {fileID: 100100000, guid: df32a655f742ef143a71366176f66d84, type: 3}
 --- !u!1 &1248292448
 GameObject:

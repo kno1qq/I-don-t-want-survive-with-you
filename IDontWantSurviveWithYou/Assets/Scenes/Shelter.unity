@@ -14693,13 +14693,18 @@ MonoBehaviour:
   speed: 5
   moveX: 0
   moveY: 0
-  playAni: {fileID: 0}
+  playAni: {fileID: 1641654346}
   isEnabledWalk: 1
   vCam: {fileID: 0}
   dialogPanel: {fileID: 0}
   weaponHolder: {fileID: 0}
   weaponHolderAni: {fileID: 0}
   uiPanel: {fileID: 0}
+--- !u!95 &1641654346 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4327742301260405781, guid: bb1f64a5aeb35724f8ed9ae5f08baeba, type: 3}
+  m_PrefabInstance: {fileID: 579412954}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1643503662
 GameObject:
   m_ObjectHideFlags: 0
