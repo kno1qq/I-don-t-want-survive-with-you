@@ -10359,6 +10359,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 89.373
       objectReference: {fileID: 0}
+    - target: {fileID: 8342717713673308655, guid: 786d215b35ddb1c49b3a1fd037f470f4, type: 3}
+      propertyPath: sceneToLoad
+      value: Day3.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15338,6 +15342,14 @@ PrefabInstance:
       propertyPath: sceneToLoad
       value: ForestScene 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1038031666188501362, guid: f7f1787d1d95f424d8419e8a36b1a501, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1767927163}
+    - target: {fileID: 1038031666188501362, guid: f7f1787d1d95f424d8419e8a36b1a501, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RepalyGame
+      objectReference: {fileID: 0}
     - target: {fileID: 1674331947253063381, guid: f7f1787d1d95f424d8419e8a36b1a501, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -15422,6 +15434,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DieCanvas2
       objectReference: {fileID: 0}
+    - target: {fileID: 2599966983878307465, guid: f7f1787d1d95f424d8419e8a36b1a501, type: 3}
+      propertyPath: sceneToLoad
+      value: ForestScene 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15432,6 +15448,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2231822858172212019, guid: f7f1787d1d95f424d8419e8a36b1a501, type: 3}
   m_PrefabInstance: {fileID: 1767927161}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1767927163 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 777215047105902018, guid: f7f1787d1d95f424d8419e8a36b1a501, type: 3}
+  m_PrefabInstance: {fileID: 1767927161}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767927162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56e93d9a6e1dbd547811dc341b65c418, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1776191869
 GameObject:
   m_ObjectHideFlags: 0

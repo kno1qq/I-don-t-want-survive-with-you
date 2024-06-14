@@ -5792,7 +5792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e73809ef4160994abc8a91ba3d5dc4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: ForestScene
+  sceneToLoad: ForestScene 2
 --- !u!61 &867380140
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7293,8 +7293,11 @@ MonoBehaviour:
   dialogPanel: {fileID: 317382737}
   specialObject: {fileID: 796636246}
   endUIPanel: {fileID: 24146134}
+  player: {fileID: 0}
   isTalk: 0
   GameState: 0
+  audioManagerPrefab: {fileID: 1974735302152017092, guid: 89869cfc2f7635646a82ce487c756e98, type: 3}
+  audioManager: {fileID: 7793037920734370722, guid: 89869cfc2f7635646a82ce487c756e98, type: 3}
 --- !u!4 &1069470180
 Transform:
   m_ObjectHideFlags: 0
@@ -16943,6 +16946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cde6fb90501352f4e8e7f1c8b931b73b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isClose: 0
 --- !u!95 &2041035106
 Animator:
   serializedVersion: 5

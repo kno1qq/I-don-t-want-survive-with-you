@@ -15747,6 +15747,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DieCanvas2
       objectReference: {fileID: 0}
+    - target: {fileID: 2599966983878307465, guid: f7f1787d1d95f424d8419e8a36b1a501, type: 3}
+      propertyPath: sceneToLoad
+      value: ForestScene 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
