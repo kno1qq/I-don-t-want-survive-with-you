@@ -19,12 +19,24 @@ public class Weapon : MonoBehaviour
     {
         print("10");
         IDamageable damageable = collision.transform.GetComponent<IDamageable>();
-        
-        if(damageable != null)
+
+        if (damageable != null)
         {
             damageable.TakeDamage(10);
             PopupText.Create(collision.transform.position, Random.Range(1, 100), Random.Range(0, 100) < 30);
         }
-        
     }
+    /*
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        print("10");
+        IDamageable damageable = collision.transform.GetComponent<IDamageable>();
+
+        if (damageable != null)
+        {
+            damageable.TakeDamage(10);
+            PopupText.Create(collision.transform.position, Random.Range(1, 100), Random.Range(0, 100) < 30);
+        }
+    }
+    */
 }

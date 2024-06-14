@@ -12,6 +12,7 @@ public class BeachPanelManager : MonoBehaviour
     public ScreenPanel _screenPanel;
 
     public int state = 0;
+    public string sceneToLoad;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,11 +37,12 @@ public class BeachPanelManager : MonoBehaviour
         if (GameManager.instance.GameState == 4 && !GameManager.instance.isTalk)
         {
             GameManager.instance.openScreenPanel("第一幕:劫後餘生");
+            StartCoroutine(TransitionCoroutine(sceneToLoad));
             GameManager.instance.GameState = 5;
         }
         if (GameManager.instance.GameState == 5 && _screenPanel.isClose)
         {
-            SceneManager.LoadScene("ForestScene");
+            
         }
     }
     /*
@@ -51,4 +53,12 @@ public class BeachPanelManager : MonoBehaviour
         GameManager.instance.CloseTipPanel();
     }
     */
+    public IEnumerator TransitionCoroutine(string newSceneName)
+    {
+        yield return StartCoroutine(ScreenFader.Instance.FadeScreenOut());
+
+        SceneManager.LoadScene(newSceneName);
+
+        yield return StartCoroutine(ScreenFader.Instance.FadeScreenIn());
+    }
 }

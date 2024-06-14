@@ -11,11 +11,13 @@ public class itemonwork : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
+            if (!GameManager.instance.grid.activeSelf)
+            {
+                GameManager.instance.openGrid();
+            }
             AddNewItem();
             Destroy(gameObject);
         }
-
-        
     }
     public void AddNewItem()
     {

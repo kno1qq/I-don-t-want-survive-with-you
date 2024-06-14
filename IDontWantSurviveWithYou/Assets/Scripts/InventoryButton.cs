@@ -14,7 +14,9 @@ public class InventoryButton : MonoBehaviour
     public GameObject food1; 
     public GameObject food2; 
     public GameObject food3;
-    public Button Button; 
+    public Button Button;
+    public GameObject currentUI; // 當前的 UI 面板
+    public GameObject newUI; // 新的 UI 面板
     private int destroyCount = 0;
 
 
@@ -50,11 +52,13 @@ public class InventoryButton : MonoBehaviour
             {
                 Button.interactable = false;               
             }
-            print("A");
-        }       
+            print("A");           
+        }
+        
+        if (food.itemHeld == 0 && destroyCount < 4)
+        {
+            if (currentUI != null) currentUI.SetActive(false);
+            if (newUI != null) newUI.SetActive(true);
+        }
     }
-
-
-
-
 }

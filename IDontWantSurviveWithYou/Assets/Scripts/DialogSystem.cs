@@ -23,6 +23,7 @@ public class DialogSystem : MonoBehaviour
     public Sprite face03;
     public Sprite face04;
     public Sprite face05;
+    public Sprite face06;
 
     List<string> textList = new List<string>();
     bool textFinished; //是否完成打字
@@ -102,6 +103,10 @@ public class DialogSystem : MonoBehaviour
                 break;
             case "E\r":
                 faceImage.sprite = face05;
+                index++;
+                break;
+            case "F\r":
+                faceImage.sprite = face06;
                 index++;
                 break;
         }

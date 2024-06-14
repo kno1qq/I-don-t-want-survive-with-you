@@ -1,10 +1,13 @@
-﻿using System.Collections;
+﻿using Pathfinding;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class monster : LivingEntity
 {
+    public Transform target;
     public Transform playerTransform;
+
     Animator animator;
     Vector2 dir;
     float angel;

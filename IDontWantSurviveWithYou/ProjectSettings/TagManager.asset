@@ -7,6 +7,11 @@ TagManager:
   - chat
   - GoInShelter
   - GoOutShelter
+  - nife
+  - fireball
+  - Door
+  - bossShow
+  - chatB
   layers:
   - Default
   - TransparentFX

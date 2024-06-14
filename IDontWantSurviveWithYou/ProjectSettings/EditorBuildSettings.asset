@@ -12,9 +12,42 @@ EditorBuildSettings:
     path: Assets/Scenes/Beach.unity
     guid: b81d1cf26bc85ee49b01334cdf9979b6
   - enabled: 1
-    path: Assets/Scenes/ForestScene.unity
+    path: Assets/Scenes/ForestScene 1.unity
     guid: 7b644f1a584cd474a82d2a9565e71179
+  - enabled: 1
+    path: Assets/Scenes/ForestScene 2.unity
+    guid: 3c4efcc0f6535f14bb971c182a3dc659
+  - enabled: 1
+    path: Assets/Scenes/ForestScene 3.unity
+    guid: 95966d1d5f7f51a4bbad3f86c436d631
+  - enabled: 1
+    path: Assets/Scenes/ForestScene 4.unity
+    guid: 875c8ea443cdd6842960d265ced16e09
+  - enabled: 1
+    path: Assets/Scenes/ForestScene 5.unity
+    guid: 334b8c84d190109479cb05e6ece0383d
   - enabled: 1
     path: Assets/Scenes/Shelter.unity
     guid: e8e6b5167bc03624ead971f09a13338f
+  - enabled: 1
+    path: Assets/Scenes/Day2.unity
+    guid: e7d800791dcb6af49a080b804bfbfdf6
+  - enabled: 1
+    path: Assets/Scenes/Day3.unity
+    guid: 3146726a8932df948b99b43e351b7738
+  - enabled: 1
+    path: Assets/Scenes/Day3.5.unity
+    guid: b590ddaa3e99db14da51319ff19fac72
+  - enabled: 1
+    path: Assets/Scenes/Day4.unity
+    guid: 6b161bd44cf768942b70d6be07d12b5d
+  - enabled: 1
+    path: Assets/Scenes/Day4.5.unity
+    guid: 3e621aa875c0cdb4ea9c8f329c254f44
+  - enabled: 1
+    path: Assets/Scenes/Day5.unity
+    guid: b7785ea8a47c2f04884f9ac7a62f3122
+  - enabled: 1
+    path: Assets/Scenes/military base.unity
+    guid: edf2ef64454dac74d93734283d38d48f
   m_configObjects: {}

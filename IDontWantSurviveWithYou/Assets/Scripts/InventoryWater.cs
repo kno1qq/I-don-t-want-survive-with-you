@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +14,8 @@ public class InventoryWater : MonoBehaviour
     public GameObject water3;
     public GameObject water4;
     public Button Button;
+    public GameObject currentUI; // 當前的 UI 面板
+    public GameObject newUI; // 新的 UI 面板
     private int destroyCount = 0;
 
     void Start()
@@ -24,8 +25,8 @@ public class InventoryWater : MonoBehaviour
 
     public void DecreaseItem()
     {
-
-        if (water != null && water.itemHeld > 0)
+        
+        if (water != null )
         {
             water.itemHeld -= 1;
             number.text = water.itemHeld.ToString();
@@ -52,6 +53,12 @@ public class InventoryWater : MonoBehaviour
                 Button.interactable = false;
             }
             print("B");
+        }
+
+        if (water.itemHeld <= 0 && destroyCount < 4)
+        {
+            if (currentUI != null) currentUI.SetActive(false);
+            if (newUI != null) newUI.SetActive(true);
         }
 
     }
