@@ -7450,7 +7450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8342717713673308655, guid: 786d215b35ddb1c49b3a1fd037f470f4, type: 3}
       propertyPath: sceneToLoad
-      value: forest 5
+      value: ForestScene 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14091,7 +14091,7 @@ PrefabInstance:
     - target: {fileID: 3668143770951590213, guid: df32a655f742ef143a71366176f66d84, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1990439584}
+      objectReference: {fileID: 1990439596}
     - target: {fileID: 3668143770951590213, guid: df32a655f742ef143a71366176f66d84, type: 3}
       propertyPath: textFile.Array.size
       value: 9
@@ -14473,10 +14473,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 760583252}
   - {fileID: 1038781361}
   - {fileID: 480225195}
   - {fileID: 1375680958}
-  - {fileID: 760583252}
   m_Father: {fileID: 1485047419}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -16155,6 +16155,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2618710094381178453, guid: bb1f64a5aeb35724f8ed9ae5f08baeba, type: 3}
   m_PrefabInstance: {fileID: 1977060223}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1990439596 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2007588145723762119, guid: bb1f64a5aeb35724f8ed9ae5f08baeba, type: 3}
+  m_PrefabInstance: {fileID: 1977060223}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990439584}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b49a461ff67729e4e8ee66411b3b6b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1991108994
 GameObject:
   m_ObjectHideFlags: 0

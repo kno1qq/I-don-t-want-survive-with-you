@@ -19,7 +19,7 @@ public class ScenesManager : MonoBehaviour
         SceneManager.LoadScene("Beach");
         food.itemHeld = 1;
         Water.itemHeld = 1;
-        nife.itemHeld = 1;
-        key.itemHeld = 1;
+        nife.itemHeld = 0;
+        key.itemHeld = 0;
     }
 }

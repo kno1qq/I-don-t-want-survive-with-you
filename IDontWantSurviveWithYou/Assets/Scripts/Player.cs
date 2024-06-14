@@ -206,7 +206,7 @@ public class Player : LivingEntity
     {
         int GetSceneName = SceneManager.GetActiveScene().buildIndex;
 
-        if (GetSceneName == 4)//Women Buff
+        if (GetSceneName == 4 || GetSceneName == 14)//Women Buff
         {
             totalTime += Time.deltaTime;//每五秒加血量
             if (totalTime >= 5)
@@ -222,12 +222,10 @@ public class Player : LivingEntity
         {
             M3Buff = 5;
         }
-        /*
-        else if (GetSceneName == 5)//Old Men Buff
+        if (GetSceneName == 5 || GetSceneName == 4)//Old Men Buff
         {
             speed = 10;
         }
-        */
     }
     public IEnumerator TransitionCoroutine(string newSceneName)
     {
