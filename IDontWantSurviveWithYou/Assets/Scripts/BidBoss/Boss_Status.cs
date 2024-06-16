@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Boss_Status : MonoBehaviour
@@ -15,6 +16,8 @@ public class Boss_Status : MonoBehaviour
     public Image hpImg;
     public Image hpEffectImg;
     public float buffTime = 0.5f;
+
+    public string sceneToLoad;
     void Start()
     {
         animator = GetComponent<Animator>();                 
@@ -61,7 +64,8 @@ public class Boss_Status : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
-        Destroy(gameObject);
+        StartCoroutine(TransitionCoroutine(sceneToLoad));
+        //Destroy(gameObject);
     }
 
     public void SetHealth(float health)//設定血量
@@ -88,5 +92,13 @@ public class Boss_Status : MonoBehaviour
             yield return null;
         }
     }
-    
+    public IEnumerator TransitionCoroutine(string newSceneName)
+    {
+        yield return new WaitForSeconds(3);
+        yield return StartCoroutine(ScreenFader.Instance.FadeScreenOut());
+
+        SceneManager.LoadScene(newSceneName);
+
+        yield return StartCoroutine(ScreenFader.Instance.FadeScreenIn());
+    }
 }

@@ -36,7 +36,7 @@ public class BeachPanelManager : MonoBehaviour
         }
         if (GameManager.instance.GameState == 4 && !GameManager.instance.isTalk)
         {
-            GameManager.instance.openScreenPanel("第一幕:劫後餘生");
+            //GameManager.instance.openScreenPanel("第一幕:劫後餘生");
             StartCoroutine(TransitionCoroutine(sceneToLoad));
             GameManager.instance.GameState = 5;
         }

@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1974735302152017092}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1974735302152017095
 AudioSource:
@@ -144,6 +144,7 @@ MonoBehaviour:
   bgm: {fileID: 8300000, guid: 9253ebb3f0cdb274b8e7cffc7e49a386, type: 3}
   seDamage: {fileID: 8300000, guid: d518adddec7865843a1f8d9ab3257c56, type: 3}
   seAttack: {fileID: 8300000, guid: 47c0b5323632dfa4bb476cb0097aa654, type: 3}
-  seWalk: {fileID: 8300000, guid: f45070e2419a903409a6b9396a93e457, type: 3}
+  seWalk: {fileID: 8300000, guid: 8928949b37192f043be057bd12180603, type: 3}
   seBossHit: {fileID: 8300000, guid: 3e99e6d6a39646e43b8e9b7ac92c9483, type: 3}
   seBossAttack: {fileID: 8300000, guid: c29865ba72e82f14eb2a3ea950e60973, type: 3}
+  audios: []

@@ -206,7 +206,7 @@ public class Player : LivingEntity
     {
         int GetSceneName = SceneManager.GetActiveScene().buildIndex;
 
-        if (GetSceneName == 4 || GetSceneName == 14)//Women Buff
+        if (GetSceneName == 4)//Women Buff
         {
             totalTime += Time.deltaTime;//每五秒加血量
             if (totalTime >= 5)
@@ -218,14 +218,28 @@ public class Player : LivingEntity
             }
             speed = 3;
         }
-        else if (GetSceneName == 4)//M3 Buff
+        if (GetSceneName == 5)//M3 Buff
         {
             M3Buff = 5;
         }
-        if (GetSceneName == 5 || GetSceneName == 4)//Old Men Buff
+        if (GetSceneName == 6)//Old Men Buff
         {
             speed = 10;
         }
+        if (GetSceneName == 14)//Old Men Buff
+        {
+            totalTime += Time.deltaTime;//每五秒加血量
+            if (totalTime >= 5)
+            {
+                if (currentHp > 0 && currentHp < maxHp)
+                    currentHp += 5;
+                UpdateHealthBar();
+                totalTime = 0;
+            }
+            M3Buff = 5;
+            speed = 10;
+        }
+
     }
     public IEnumerator TransitionCoroutine(string newSceneName)
     {
